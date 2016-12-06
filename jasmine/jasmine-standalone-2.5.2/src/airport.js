@@ -1,1 +1,1 @@
-var airport = function () {};
+var Airport = function () {};

@@ -17,6 +17,4 @@ describe('Airport', function(){
       expect(airport.planes.length).toEqual(0);
     });
   });
-  
-
 });

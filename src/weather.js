@@ -1,3 +1,7 @@
 var Weather = function () {
-  this.isStormy = true;
+
+};
+
+Weather.prototype.isStormy = function (){
+  return Math.random(1) <= 0.8;
 };

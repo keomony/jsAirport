@@ -10,5 +10,11 @@ describe('Airport', function(){
       expect(airport.planes.length).toEqual(1);
     });
   });
+  describe('#takeOff', function (){
+    it('should take off a plane', function (){
+      airport.takeOff(plane);
+      expect(airport.planes.length).toEqual(0);
+    });
+  });
 
 });

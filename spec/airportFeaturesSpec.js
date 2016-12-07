@@ -3,7 +3,7 @@ describe('Features Tests', function () {
   var plane = new Plane();
 
   it('a plane will land at an airport', function () {
-    airport.land(plane);
+    plane.land(airport);
     expect(airport.planes.length).toEqual(1);
   });
 

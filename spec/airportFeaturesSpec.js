@@ -33,6 +33,12 @@ describe('Features Tests', function () {
       expect(function(){
       airport.takeOff(plane);}).toThrow("Cannot take off the plane: weather is stormy.");
     });
+  });
 
-    });
+  // describe('User story 3',function(){
+  //   it('a plane will not land if the airport is full',function(){
+  //     plane.land(airport);
+  //   });
+  // });
+
   });

@@ -3,11 +3,11 @@ var Plane = function () {
 };
 
 Plane.prototype.land = function(airport){
-  this.flying = false;
   airport.land(this);
+  this.flying = false;
 };
 
 Plane.prototype.takeOff = function(airport){
-  this.flying = true;
   airport.takeOff(this);
+  this.flying = true;
 };

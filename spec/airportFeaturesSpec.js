@@ -1,6 +1,7 @@
 describe('Features Tests', function () {
   var airport;
   var plane;
+  var weather;
 
   beforeEach(function () {
     airport = new Airport();
@@ -22,8 +23,20 @@ describe('Features Tests', function () {
     });
   });
 
-
-
-
-
+  describe('User story 2', function (){
+    var weather;
+    beforeEach(function() {
+      // weather = jasmine.createSpyObject('weather',['isStormy']);
+      weather = {
+        isStormy:  function() {
+          return true;
+        }
+      };
+      spyOn(weather, 'isStormy');
+    });
+    it('prevents plane from taking off when wheather is stormy', function(){
+      weather.isStormy;
+      expect(airport.land(plane)).toThrowError("Cannot land plane: weather is stormy.");
+    });
+  });
 });

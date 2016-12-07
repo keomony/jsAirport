@@ -11,7 +11,7 @@ describe('Plane', function(){
     });
 
     it('should not be flying', function () {
-      expect(flying).toBeFalsy();
+      expect(plane.flying).toBeFalsy();
     });
 
     it('should land the plane', function(){
@@ -19,4 +19,14 @@ describe('Plane', function(){
     });
 
   });
+  describe('#takeOff', function(){
+    beforeEach(function(){
+      plane.takeOff(airport);
+    });
+
+    it('should be flying',function(){
+      expect(plane.flying).toBeTruthy();
+    });
+  });
+
 });

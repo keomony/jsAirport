@@ -1,8 +1,12 @@
-var Plane = function () {};
-
-var flying = true
+var Plane = function () {
+  this.flying = true;
+};  
 
 Plane.prototype.land = function(airport){
-  flying = false;
+  this.flying = false;
   airport.land(this);
+};
+
+Plane.prototype.takeOff = function(airport){
+  this.flying = true;
 };

@@ -7,5 +7,4 @@ describe('Features Tests', function () {
     expect(airport.planes.length).toEqual(1);
   });
 
-
 });

@@ -4,6 +4,8 @@ describe('Features Tests', function () {
 
   it('a plane will land at an airport', function () {
     airport.land(plane);
-    expect(airport.planes).toEqual(1);
+    expect(airport.planes.length).toEqual(1);
   });
+
+
 });

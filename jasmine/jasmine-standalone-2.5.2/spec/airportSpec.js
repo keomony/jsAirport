@@ -9,7 +9,6 @@ describe('Airport', function() {
     expect(luton).toEqual(jasmine.any(airport));
   });
 
-  
 
 
 });

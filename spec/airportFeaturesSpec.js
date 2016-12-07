@@ -5,11 +5,6 @@ describe('Features Tests', function () {
   beforeEach(function () {
     airport = new Airport();
     plane = new Plane();
-    weather = {
-      isStormy: function () {
-      }
-    }
-
   });
 
   describe('User story 1', function (){
@@ -18,6 +13,11 @@ describe('Features Tests', function () {
       plane.land(airport);
       expect(airport.planes.length).toEqual(1);
     });
+    it('prevents plane from landing off when wheather is stormy', function(){
+      spyOn(weather, "isStormy").and.returnValue(true);
+      expect(function () {
+        airport.land(plane);}).toThrow("Cannot land plane: weather is stormy.");
+      });
   });
 
   describe('User story 2', function (){
@@ -27,10 +27,5 @@ describe('Features Tests', function () {
       expect(airport.planes.length).toEqual(0);
     });
 
-    it('prevents plane from taking off when wheather is stormy', function(){
-      spyOn(weather, 'isStormy').and.returnValue(true);
-      expect(function () {
-        airport.land(plane);}).toThrow("Cannot land plane: weather is stormy.");
-      });
     });
   });
